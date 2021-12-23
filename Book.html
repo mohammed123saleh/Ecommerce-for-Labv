@@ -1,0 +1,214 @@
+
+
+{% extends 'Main/Base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+
+
+
+{% include "Main/RegularNavbar.html" %}
+
+
+
+<title> {% trans "Egypt Fabrics | Products" %} </title>
+
+
+
+
+
+
+
+
+
+  
+    <div class="container">
+
+
+
+
+  <body>
+  
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>     
+  <div class="container">
+
+    <div class="row">
+   
+   
+          {% for item in object_list %}
+          <div class="col-lg-4 col-md-4 mb-4">
+
+            <div class="card" >
+              
+              <div class="view overlay">
+            
+          
+                <img style="height: 200px !important; " src="{{ item.image.url }}" class="card-img-top">
+
+                {% if item.category == 'S' %}
+                <span class="badge badge-primary" style="padding: 10px !important;">  
+                  {{item.get_category_display}}
+               </span> {% endif %}
+              
+
+               {% if item.category == 'Q' %}
+               <span class="badge badge-danger" style="padding: 10px !important;">  
+                 {{item.get_category_display}}
+              </span> {% endif %}
+             
+
+
+              {% if item.category == 'K' %}
+              <span class="badge badge-warning" style="padding: 10px !important;">  
+                {{item.get_category_display}}
+             </span> {% endif %}
+
+             {% if item.category == 'Si' %}
+             <span style="background-color: green !important; color: white !important; padding: 10px !important;" class="badge badge-light" style="padding: 10px !important;">  
+               {{item.get_category_display}}
+            </span> {% endif %}
+
+             {% if item.category == 'SK' %}
+             <span class="badge badge-default" style="padding: 10px !important; background-color: tomato !important;">  
+               {{item.get_category_display}}
+            </span> {% endif %}
+           
+            {% if item.category == 'PS' %}
+            <span class="badge badge-default" style="padding: 10px !important;">  
+              {{item.get_category_display}}
+           </span> {% endif %}
+
+
+           {% if item.category == 'PQ' %}
+           <span class="badge badge-warning" style="padding: 10px !important;">  
+             {{item.get_category_display}}
+          </span> {% endif %}
+
+
+          {% if item.category == 'PK' %}
+          <span class="badge badge-success" style="padding: 10px !important;">  
+            {{item.get_category_display}}
+         </span> {% endif %}
+        
+         {% if item.category == 'PB' %}
+         <span class="badge badge-info" style="padding: 10px !important;">  
+           {{item.get_category_display}}
+        </span> {% endif %}
+
+
+
+                <a href="{{ item.get_absolute_url }}">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+       
+
+
+
+
+              <div class="card-body text-center" style="height: 250px !important; margin: 0px !important; padding-bottom: 3px !important;">
+                <a href="" class="grey-text">
+
+          
+                </a>
+                <h5>
+                  <strong style="font-size: 15px !important;  ">
+                    <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title|truncatechars:50 }}
+                     
+                    </a>
+                  </strong>
+                </h5>
+
+                <h4 class="font-weight-light blue-text">
+                  <strong style="font-weight: bold !important;">
+                  {% if item.discount_price %}
+                  {{ item.discount_price }}
+                  {% else %}
+               
+                  {{ item.price }}0 
+                  
+                  {% endif %}
+                  </strong>
+                </h4>
+               
+                <a href="{{ item.get_absolute_url }}">
+             <button class="btn btn-dark btn-block"> {% trans "Buy Now" %} </button></a>
+              </div>
+
+            </div>
+
+          </div>
+          {% endfor %}
+        </div>
+     
+      </section>
+    </div>
+  </div>
+
+      <!--Section: Products v.3-->
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+      <!--Pagination-->
+
+      {% if is_paginated %}
+      <nav class="d-flex justify-content-center wow fadeIn">
+        <ul class="pagination pg-blue">
+
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true">{% trans "&laquo;" %}</span>
+              <span class="sr-only"> {% trans "Previous" %} </span>
+            </a>
+          </li>
+          {% endif %}
+
+          <li class="page-item active">
+            <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
+              <span class="sr-only">{% trans "(current)" %}</span>
+            </a>
+          </li>
+
+          {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">{% trans "&raquo;" %}</span>
+              <span class="sr-only">{% trans "Next" %} </span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% endif %}
+
+    </div>
+  </div>
+
+<script>
+  $(document).ready(function(){
+    $('#langlang').hide();
+  });
+</script>
+{% endblock  %}
+
+

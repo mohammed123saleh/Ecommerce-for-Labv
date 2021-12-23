@@ -1,0 +1,106 @@
+{% extends 'Main/Base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+{% include 'Main/RegularNavbar.html' %}
+
+<title> {% trans "Egypt Fabrics | Contact" %}  </title>
+
+<style>
+  body{
+    /*background-image: url('{% static "Main/img/bedsheet.jpg"%}'); */
+    background-repeat: no-repeat;
+    color: black !important;
+   /* background-color: black;*/
+    max-width: 1400px;
+  /*  margin-top: 0px !important;*/
+   
+
+
+  }
+
+#btblack:hover{
+  color: white !important;
+  background-color: black !important;
+  border: 2px solid rgb(255, 255, 255)!important;
+
+}
+.form-control{
+  height: calc(2.5em + 0.75rem + 2px);
+}
+/*
+  .header-wrap-clone{
+  height:100px !important;
+  margin-bottom: 1px;
+  } 
+#whity{
+  color: white !important;
+}  */
+</style>
+
+
+<br><br>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+  
+
+<h1 style="color: green !important;">{{mars}}</h1>
+<h1 style="color: green !important;">{{moon}}</h1>
+
+<div class="mo">
+
+
+<div class="container" style=" padding:10px; max-width: 720px;">
+<div class="col-md-12 " style="color: white !important;">
+<h1 class="mo" style="color: rgb(30, 26, 26) ;">{% trans "Contact Us" %}</h1>
+<hr>
+
+<form  method="POST" style="color: white !important;">{% csrf_token %}
+    {{form|crispy}}
+
+  <button type="submit" id="btblack" style="height:70px !important; width: 150px !important;" class="btn btn-outline-secondary"> {% trans "Submit" %} </button>
+</form>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script>
+
+  $('document').ready(function(){
+
+ 
+
+    
+     $('#top-search').hide();
+     $('#langlang').hide();
+
+
+
+
+
+
+  });
+
+
+</script>
+
+</div>
+
+{% endblock  %}
+
+

@@ -1,0 +1,122 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    <meta charset="utf-8">
+    <!--Programmer  : Mohammed Saleh Babers-->
+    <!--Phone Number: 01111662946 -->
+     <!--Email: mohamedsaleh902@yahoo.com -->
+    <meta name="viewport" content="width=device-width, initial-scale=1>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@669&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cabin|Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Eczar:700|Gentium+Basic" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script
+    src="https://code.jquery.com/jquery-1.7.1.min.js"
+    integrity="sha256-iBcUE/x23aI6syuqF7EeT/+JFBxjPs5zeFJEXxumwb0="
+    crossorigin="anonymous"></script>
+
+    
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Montserrat:300,400,500,600,700|Merriweather:300,400,300i,400i&display=swap" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="{% static 'Main/css/all.css' %}"rel="stylesheet">
+
+<link href="{% static 'Main/css/font-icons.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/bootstrap.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/style.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/dark.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/swiper.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/ecommerce.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/fonts.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/font-icons.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/animate.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/magnific-popup.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/custom.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/colors.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/font-icons.css' %}"rel="stylesheet">
+
+
+
+
+
+<style>
+    .header-wrap-clone{
+    max-height:5px !important;
+    } 
+
+
+
+    </style>
+{% comment %}
+  
+
+    {% if messages %}
+         {% for message in messages %}
+      
+
+           
+   
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+   
+            {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% endcomment %}
+
+    </div>
+{% block content %}
+
+
+{% endblock  %}
+
+<script src="{% static 'Main/javascript/jquery-3.4.1.min.js' %}"></script> 
+<script src="{% static 'Main/javascript/popper.min.js' %}"></script> 
+<script src="{% static 'Main/javascript/bootstrap.min.js' %}"></script> 
+<script src="{% static 'Main/javascript/mdb.min.js' %}"></script> 
+
+
+
+<script src="{% static 'Main/javascriptjquery3.5.1.js' %}"></script>
+
+
+
+<script src="{% static 'Main/javascript/plugins.min.js' %}"></script>
+
+
+<script src="{% static 'Main/javascript/functions.js' %}"></script>
+<script src="{% static 'Main/javascript/jquery.resizeimagetoparent.js'%}"></script>
+
+	<script>
+
+		// Topbar Hide
+		$('#top-bar').on('click','#close-bar',function(){
+			$(this).parents('#top-bar').slideUp(300);
+			$('body').css('padding-top',0);
+		})
+
+		jQuery(window).on( 'pluginCarouselReady', function(){
+			// Custom Carousel
+			$('.owl-carousel').owlCarousel({
+				items: 1,
+				dotsContainer: '#item-color-dots',
+			    loop: true,
+			});
+		});
+	</script>

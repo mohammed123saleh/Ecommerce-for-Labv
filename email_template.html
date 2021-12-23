@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body style="text-align: left !important;">
+
+
+<img style="max-width: 300px !important; max-height: 200px !important; text-align: left !important" src="https://www.egyptfabrics.com/static/Main/img/EgyptFabrics4.jpeg" alt="">
+
+<p style="text-align:left !important;">Dear <span style="font-weight: bold;">{{name}}, </span>   </p>
+<br> 
+<p style="text-align:left !important;"> Thank you for shopping online with Egypt Fabrics. A summary of your order and delivery information is displayed below.</p> 
+<br>
+<p style="text-align:left "> <span style="font-weight: bold !important;">Your Order: </span> {{order_num}}</p> 
+
+<p style="text-align:left !important;"></p>
+<br>
+<p style="text-align:left !important; font-weight: bold;">Shipping Info</p>
+<p style="text-align:left !important;">-----------</p>
+
+<p style="text-align:left !important;"><span style="font-weight: bold;" >Customer: </span> {{name}}</p>
+
+<p style="text-align:left !important;"> <span style="font-weight: bold;" > Address: </span>  {{customer_address}}</p>
+
+{% if customer_gov  %}
+  
+
+
+<p style="text-align:left !important;"><span style="font-weight: bold;"> Governate:</span>{{customer_gov}}</p>
+{% endif %}
+
+
+<p style="text-align:left !important;"><span style="font-weight: bold;">Country :</span> {{customer_country}}</p>
+
+
+<br>
+
+<p style="text-align:left !important;"> <span style=" font-weight: bold;"> Mobile NO:</span>   {{customer_tel}}</p>    
+
+
+
+<p style="text-align:left !important;">    
+<span style="font-weight: bold !important;">Payment Method</span>
+Cash on Delivery
+Send Check to</p> 
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,554 @@
+
+{% load static %}
+{% load i18n %}
+{% load cart_template_tags %}
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+<link href="{% static 'Main/css/bootstrap.min.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/mdb.min.css' %}" rel="stylesheet">
+<link href="{% static 'Main/css/style.min.css' %}" rel="stylesheet">
+<link href="{% static 'Main/css/font-icons.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/bootstrap.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/style.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/dark.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/swiper.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/ecommerce.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/fonts.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/font-icons.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/animate.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/magnific-popup.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/custom.css' %}"rel="stylesheet">
+<link href="{% static 'Main/css/colors.css' %}"rel="stylesheet">
+
+
+<link rel="icon" href="{% static 'Main/img/EF.jpg' %}" type="image/x-icon"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies:wght@700&display=swap" rel="stylesheet">
+
+<style>
+	ul{
+	list-style-type: none !important;
+	}
+	#header{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		width: 100%;
+		height: 50px;
+		background-color: #444d4b;
+		border-bottom: black .1px solid;
+		
+		}
+
+</style>
+
+<body class="stretched">
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+<!-- Top Bar
+============================================= -->
+
+<!-- Header
+============================================= -->
+<header id="header" class="full-header no-sticky" data-menu-padding="30" >
+<div id="header-wrap"   >
+<div class="container">
+<div class="header-row align-items-lg-stretch">
+
+<!-- Logo
+============================================= -->
+<div id="logo"   >
+<a href="/" class="standard-logo"><img src="{% static 'Main/img/EgyptFabrics4.jpeg' %}" alt="Egypt Fabrics"></a>
+<a href="/" class="retina-logo"><img src="{% static 'Main/img/EgyptFabrics4.jpeg' %}" alt="Egypt Fabrics"></a>
+</div><!-- #logo end -->
+
+<div class="header-misc align-items-lg-stretch">
+
+<!-- Top Cart
+============================================= -->
+{% comment %}
+  
+
+<form id="langlang" action="{% url 'set_language' %}" method="post" style=" margin-bottom:1px !important;padding-bottom:1px !important;" >
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+    <ul class="nav navbar-nav navbar-right language menu">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <li>
+                <button style="background-color: white; color:black; margin-bottom:1px !important;padding-bottom:1px !important; width: 80px; font-size: 12px;   border: #666 1px outset;" type="submit"
+                        name="language"
+                        value="{{ language.code }}"
+                        class="{% if language.code == LANGUAGE_CODE %}selected{% endif %}">
+                    {{ language.name_local }}
+				</button>
+				{% endfor %}
+            </li>
+     
+    </ul>
+</form>
+{% endcomment %}
+
+
+
+
+
+
+
+
+
+
+<div id="top-cart" class="header-misc-icon"  >
+<a href="{% url 'Main:order-summary'%}" ><i class="icon-line-bag"></i><span class="top-cart-number">{{ request.user|cart_item_count }}</span></a>
+
+
+
+<div class="top-cart-content">
+<div >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div >
+<div >
+
+<div >
+
+	
+
+		
+
+
+
+<p >
+</p>	
+
+<p >
+</p>	
+
+<p >
+</p>	
+
+</div>
+<div >
+	<div >
+	
+		<a href="#"></a>
+		<span ></span>
+	</div>
+	<div ></div>
+</div>
+</div>
+</div>
+
+<div >
+
+<span style="font-size: 14px;">  <span ></span> </span>
+<a href="{% url 'Main:order-summary'%}" class="button button-3d button-small m-0">View Cart</a>	
+</div>
+
+</div>
+
+</div><!-- #top-cart end -->
+
+  
+
+<!-- Top Account
+============================================= -->
+
+
+<!-- Top Search
+============================================= -->
+<div id="top-search" class="header-misc-icon"  >
+<a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
+</div><!-- #top-search end -->
+
+
+</div>
+<div id="primary-menu-trigger">
+<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+</div>
+
+<!-- Primary Navigation
+============================================= -->
+<nav class="primary-menu style-ecommerce menu-spacing-margin" >
+
+<ul class="menu-container">
+
+
+	
+<li {% ifequal request.path '/' %}  class="menu-item current" {% else %}  class="menu-item" {% endifequal %}><a class="menu-link" href="/"><div> {% trans " Home " %} </div></a></li>
+
+<li {% ifequal request.path '/about/' %}  class="menu-item current" {% else %}  class="menu-item" {% endifequal %}><a class="menu-link" href="/about/"><div>   {% trans "About" %} </div></a>
+
+<li {% ifequal request.path '/Contact/' %}  class="menu-item current" {% else %}  class="menu-item" {% endifequal %}><a class="menu-link" href="/Contact/"><div>  {% trans "Contact" %}  </div></a></li>	
+
+<li class="menu-item mega-menu mega-menu-small"><a class="menu-link" href="#"><div>{% trans "Products" %}</div></a>
+	<div class="mega-menu-content mega-menu-style-2">
+		<div class="container">
+			<div class="row">
+<style>
+	#m:hover{
+		font-size: 24px !important;
+	}
+</style>
+		
+				<ul class="sub-menu-container mega-menu-column col-lg-6">
+					<li class="menu-item mega-menu-title"><a  class="menu-link" href="#"><div></div></a>
+						<ul class="sub-menu-container">
+							<li class="menu-item"><a class="menu-link" href="/Products/"><div>{% trans "Varieties" %}</div></a></li>
+							<li class="menu-item"><a class="menu-link" href="/Towels"><div>{% trans "Towels" %}</div></a></li>
+							<li class="menu-item"><a class="menu-link" href="/BedSheets"><div>{% trans "Bedsheet Sets" %}</div></a></li>
+							<li class="menu-item"><a class="menu-link" href="/Pillowcases"><div>{% trans "Pillowcases" %}</div></a></li>
+					
+						</ul>
+					</li>
+				</ul>
+			
+			</div>
+		</div>
+	</div>
+</li><!-- .mega-menu end -->
+
+<div class="mega-menu-content mega-menu-style-2">
+
+
+<div>
+<div >
+	<ul >
+		<li >
+			<div>
+
+				<div>
+					<div >
+						
+						<div></div>
+						<div></div>
+					</div>
+					<div>
+						<div>
+						
+							
+							<div >
+				
+							</div>
+						</div>
+						<div >
+						
+						</div>
+					</div>
+				</div>
+
+			</div-->
+		</li>
+	</ul>
+	<ul >
+		<li >
+			<div>
+
+				
+
+				<div >
+					<div >
+						<div >
+							<div >
+								<div >
+								
+								</div>
+							</div>
+							<div >
+								<div >
+									
+								</div>
+								<div >
+									<ul>
+									
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>	
+
+					<div >
+						<div >
+							<div >
+								<div>
+									
+								</div>
+							</div>
+							<div >
+								<div >
+									
+								</div>
+								<div >
+									<ul >
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div >
+						<div >
+							<div >
+								<div >
+								
+								</div>
+							</div>
+							<div >
+								<div >
+							
+								</div>
+								<div >
+									<ul >
+									<li></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</li>
+	</ul>
+	<ul >
+		<li><div></div>
+			<ul>
+
+			</ul>
+		</li>
+	</ul>
+	<ul >
+		<li ><div> </div>
+			<ul >
+				
+			</ul>
+		</li>
+	</ul>
+</div>
+</div>
+</div>
+</li>
+
+
+
+
+
+
+
+
+
+<!--div class="mega-menu-content mega-menu-style-2">
+<div class="container">
+<div class="row">
+	<ul class="sub-menu-container mega-menu-column col-lg-6">
+		<li class="menu-item mega-menu-title"><a class="menu-link" href="#"><div></div></a>
+			<ul class="sub-menu-container">
+				<li class="menu-item"><a class="menu-link" href="#"><div> </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div> </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div> </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div> </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div></div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div> </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div> </div></a></li>
+			</ul>
+		</li>
+	</ul>
+	<ul class="sub-menu-container mega-menu-column col-lg-6">
+		<li class="menu-item mega-menu-title"><a class="menu-link" href="#"><div> </div></a>
+			<ul class="sub-menu-container">
+				<li class="menu-item"><a class="menu-link" href="#"><div>  </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div> </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div>   </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div>   </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div>  </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div> </div></a></li>
+				<li class="menu-item"><a class="menu-link" href="#"><div> </div></a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</div>
+</div-->
+</li><!-- .mega-menu end -->
+
+
+<script>
+
+
+
+$(document).ready(function() {
+   
+   $("#togglecolor").change(function(){
+      $('.mo').toggleClass('dark')
+    });
+
+   
+ });;
+
+
+</script>
+
+</ul>
+
+</nav><!-- #primary-menu end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form class="top-search-form"  method="GET">
+	<input type="text" name="q" class="form-control" value="{{request.GET.q}}" placeholder="{% trans 'Type &amp; Hit Enter..' %}" autocomplete="on">
+	</form>
+	
+	</div>
+	</div>
+	</div>
+	<div class="header-wrap-clone"></div>
+	</header><!-- #header end -->
+	
+	
+	
+	
+	
+	{% if request.GET.q and object_list %}
+	
+
+	
+	<div class="container">
+
+	<div class="row">
+	
+
+	
+	{% for item in object_list %}
+
+	
+	<div class="col-lg-4 col-md-4 mb-4">
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<div class="card">
+	
+	<div class="view overlay">
+	
+	
+	    <img style="height: 200px !important; " src="{{ item.image.url }}" class="card-img-top">
+	<a href="{{ item.get_absolute_url }}">
+	<div class="mask rgba-white-slight"></div>
+	</a>
+	</div>
+	<div class="card-body text-center" style="height: 250px !important; margin: 0px !important; padding-bottom: 3px !important;">
+
+	<a href="" class="grey-text">
+	
+	
+	</a>
+	<h5>
+		<strong style="font-size: 15px !important; font-weight: bold !important; ">
+			<a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ item.title|truncatechars:50 }}
+			 
+			</a>
+		  </strong>
+		</h5>
+	
+	
+	<h4 class="font-weight-bold blue-text">
+	<strong>
+	{% if item.discount_price %}
+	LE {{ item.discount_price }}
+	{% else %}
+	LE {{ item.price }}
+	
+	{% endif %}
+	</strong>
+	</h4>
+	<a href="{{ item.get_absolute_url }}">
+		<button style="color: white !important;" class="btn btn-amber btn-block"> {% trans "Buy Now" %} </button></a>
+	</div>
+	
+	</div>
+	
+	</div>
+	{% endfor %}
+	</div>
+	
+	</section>
+	</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	{%endif%}
+	
+	
+	</div>
+	</div>
+	</div>
+
+	</header><!-- #header end -->
+	
+	
+	
+	
+	
+	
+	<script src="{% static 'Main/javascript/jquery-3.4.1.min.js' %}"></script> 
+	<script src="{% static 'Main/javascript/popper.min.js' %}"></script> 
+	<script src="{% static 'Main/javascript/bootstrap.min.js' %}"></script> 
+	<script src="{% static 'Main/javascript/mdb.min.js' %}"></script> 
+	<script src="{% static 'Main/javascript/jquery.js' %}"></script>
+	<script src="{% static 'Main/javascript/plugins.min.js' %}"></script>
+	<script src="{% static 'Main/javascript/functions.js' %}"></script>
+	
